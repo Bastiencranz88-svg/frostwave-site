@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Panier - FrostWave</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f7f9ff;
+      color: #111;
+    }
+
+    nav {
+      background: white;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      text-align:center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 6px;
+      background: #111;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="beats.html">Beats</a>
+  <a href="kits.html">Kits</a>
+  <a href="contact.html">Contact</a>
+  <a href="panier.html">Panier</a>
+</nav>
+
+<h1 style="text-align:center;">🛒 Panier FrostWave</h1>
+
+<div id="cart" style="text-align:center;"></div>
+
+<script>
+function loadCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let container = document.getElementById("cart");
+
+  container.innerHTML = "";
+
+  if (cart.length === 0) {
+    container.innerHTML = "<p>Ton panier est vide ❄️</p>";
+    return;
+  }
+
+  cart.forEach((item, index) => {
+    let div = document.createElement("div");
+    div.style.margin = "10px";
+
+    div.innerHTML = `
+      🎧 ${item}
+      <button onclick="removeItem(${index})">❌ Retirer</button>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+loadCart();
+</script>
+
+</body>
+</html>
