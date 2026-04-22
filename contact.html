@@ -1,29 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Contact - FrostWave</title>
+<meta charset="UTF-8">
+<title>Contact</title>
 
-  <style>
-    body { font-family: Arial; margin: 0; background: #f7f9ff; color: #111; }
-    nav { background: white; padding: 15px; border-bottom: 1px solid #ddd; text-align:center; }
-    nav a { margin: 0 10px; text-decoration: none; color: #111; font-weight: bold; }
-  </style>
+<style>
+:root{
+  --bg:#f7f9ff;
+  --card:white;
+  --text:#111;
+  --nav:white;
+  --border:#ddd;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f0f14;
+    --card:#1a1a25;
+    --text:white;
+    --nav:#161621;
+    --border:#333;
+  }
+}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:var(--bg);
+  color:var(--text);
+  text-align:center;
+}
+
+nav{
+  background:var(--nav);
+  padding:15px;
+}
+
+nav a{
+  margin:0 10px;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.card{
+  width:300px;
+  margin:30px auto;
+  padding:20px;
+  background:var(--card);
+  border-radius:16px;
+  border:1px solid var(--border);
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">Accueil</a>
-  <a href="beats.html">Beats</a>
-  <a href="kits.html">Kits</a>
-  <a href="contact.html">Contact</a>
-  <a href="panier.html">Panier</a>
+<a href="index.html">Accueil</a>
+<a href="beats.html">Beats</a>
+<a href="kits.html">Kits</a>
+<a href="contact.html">Contact</a>
+<a href="panier.html">Panier</a>
 </nav>
 
-<h1 style="text-align:center;">📩 Contact</h1>
+<h1>📩 Contact</h1>
 
-<p style="text-align:center;">Email: tonmail@gmail.com</p>
+<div class="card">
+<p>Email :</p>
+<p><b>frostwave.wav@gmail.com</b></p>
+</div>
 
 </body>
 </html>

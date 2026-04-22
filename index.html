@@ -1,36 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>FrostWave - Accueil</title>
+<meta charset="UTF-8">
+<title>FrostWave</title>
 
-  <style>
-    body { font-family: Arial; margin: 0; background: #f7f9ff; color: #111; }
-    nav { background: white; padding: 15px; border-bottom: 1px solid #ddd; text-align:center; }
-    nav a { margin: 0 10px; text-decoration: none; color: #111; font-weight: bold; }
-    nav a:hover { color: #4aa3ff; }
-    button { padding: 10px 15px; border: none; border-radius: 8px; background: #111; color: white; cursor: pointer; }
-    button:hover { transform: scale(1.05); }
-  </style>
+<style>
+:root{
+  --bg:#f7f9ff;
+  --card:white;
+  --text:#111;
+  --nav:white;
+  --border:#ddd;
+  --btn:#4aa3ff;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f0f14;
+    --card:#1a1a25;
+    --text:white;
+    --nav:#161621;
+    --border:#333;
+  }
+}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:var(--bg);
+  color:var(--text);
+  text-align:center;
+}
+
+nav{
+  background:var(--nav);
+  padding:15px;
+}
+
+nav a{
+  margin:0 10px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:bold;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  width:80%;
+  margin:60px auto;
+  padding:40px;
+  border-radius:16px;
+}
+
+button{
+  background:var(--btn);
+  border:none;
+  padding:12px 18px;
+  border-radius:12px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">Accueil</a>
-  <a href="beats.html">Beats</a>
-  <a href="kits.html">Kits</a>
-  <a href="contact.html">Contact</a>
-  <a href="panier.html">Panier</a>
+<a href="index.html">Accueil</a>
+<a href="beats.html">Beats</a>
+<a href="kits.html">Kits</a>
+<a href="contact.html">Contact</a>
+<a href="panier.html">Panier</a>
 </nav>
 
-<h1 style="text-align:center;">❄️ FrostWave</h1>
-<p style="text-align:center;">Beatmaker - Dark Drill / Melodic Trap</p>
-
-<div style="text-align:center;">
-  <a href="beats.html">
-    <button>🎧 Voir les beats</button>
-  </a>
+<div class="card">
+<h1>🎧 FrostWave</h1>
+<p>Beats exclusifs pour artistes</p>
+<button onclick="location.href='beats.html'">🔥 Voir les beats</button>
 </div>
 
 </body>

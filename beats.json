@@ -1,0 +1,16 @@
+[
+  {
+    "id": "king",
+    "title": "KING",
+    "bpm": 138,
+    "file": "beats/king.mp3",
+    "desc": "Dark cinematic trap"
+  },
+  {
+    "id": "glory",
+    "title": "GLORY",
+    "bpm": 154,
+    "file": "beats/glory.mp3",
+    "desc": "Emotional trap beat"
+  }
+]

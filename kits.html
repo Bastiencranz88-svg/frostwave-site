@@ -1,35 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Kits - FrostWave</title>
+<meta charset="UTF-8">
+<title>Kits</title>
 
-  <style>
-    body { font-family: Arial; margin: 0; background: #f7f9ff; color: #111; }
-    nav { background: white; padding: 15px; border-bottom: 1px solid #ddd; text-align:center; }
-    nav a { margin: 0 10px; text-decoration: none; color: #111; font-weight: bold; }
-    nav a:hover { color: #4aa3ff; }
-    .card { background:white; border:1px solid #ddd; border-radius:16px; padding:18px; width:340px; margin:20px auto; }
-    button { padding:10px 15px; border:none; border-radius:8px; background:#111; color:white; cursor:pointer; }
-  </style>
+<style>
+:root{
+  --bg:#f7f9ff;
+  --card:white;
+  --text:#111;
+  --nav:white;
+  --border:#ddd;
+  --btn:#4aa3ff;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f0f14;
+    --card:#1a1a25;
+    --text:white;
+    --nav:#161621;
+    --border:#333;
+  }
+}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:var(--bg);
+  color:var(--text);
+  text-align:center;
+}
+
+nav{
+  background:var(--nav);
+  padding:15px;
+}
+
+nav a{
+  margin:0 10px;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.card{
+  width:300px;
+  margin:30px auto;
+  padding:20px;
+  background:var(--card);
+  border-radius:16px;
+  border:1px solid var(--border);
+}
+
+button{
+  background:var(--btn);
+  border:none;
+  padding:10px;
+  border-radius:10px;
+  color:white;
+  cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">Accueil</a>
-  <a href="beats.html">Beats</a>
-  <a href="kits.html">Kits</a>
-  <a href="contact.html">Contact</a>
-  <a href="panier.html">Panier</a>
+<a href="index.html">Accueil</a>
+<a href="beats.html">Beats</a>
+<a href="kits.html">Kits</a>
+<a href="contact.html">Contact</a>
+<a href="panier.html">Panier</a>
 </nav>
 
-<h1 style="text-align:center;">🥁 Kits</h1>
+<h1>🥁 Kits</h1>
 
 <div class="card">
-  <h2>Drum Kit (coming soon)</h2>
-  <p>FrostWave drum sounds</p>
-  <button>Notify me</button>
+<h2>Drum Kit Pro</h2>
+<p>20€</p>
+<button>Acheter</button>
 </div>
 
 </body>

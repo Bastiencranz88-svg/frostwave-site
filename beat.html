@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Beat</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0f0f14;
+  color:white;
+  text-align:center;
+}
+
+nav{
+  background:#161621;
+  padding:15px;
+}
+
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.card{
+  width:350px;
+  margin:40px auto;
+  padding:20px;
+  background:#1a1a25;
+  border-radius:16px;
+}
+
+audio{
+  width:100%;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  background:#4aa3ff;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="beats.html">Beats</a>
+<a href="kits.html">Kits</a>
+<a href="contact.html">Contact</a>
+<a href="panier.html">Panier</a>
+</nav>
+
+<h1 id="title">Beat</h1>
+
+<div class="card">
+
+<audio id="audio" controls></audio>
+
+<p id="desc"></p>
+
+<button onclick="add(50)">MP3 - 50€</button>
+<button onclick="add(100)">WAV - 100€</button>
+<button onclick="add(200)">EXCLUSIVE - 200€</button>
+
+</div>
+
+<script>
+// 👉 récupérer "id" dans URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+// 👉 base de données simple
+const beats = {
+  king:{
+    title:"KING (138 BPM)",
+    audio:"frostwave-138bpm-king.mp3",
+    desc:"Dark cinematic trap beat"
+  },
+  glory:{
+    title:"GLORY (154 BPM)",
+    audio:"frostwave-154bpm-glory.mp3",
+    desc:"Energetic emotional trap beat"
+  }
+};
+
+// 👉 afficher beat
+const beat = beats[id];
+
+document.getElementById("title").innerText = beat.title;
+document.getElementById("audio").src = beat.audio;
+document.getElementById("desc").innerText = beat.desc;
+
+// 👉 panier
+function add(price){
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+cart.push({name:beat.title,price});
+localStorage.setItem("cart",JSON.stringify(cart));
+alert("Ajouté 🛒");
+}
+</script>
+
+</body>
+</html>
